@@ -6,4 +6,4 @@ cache:
   directories:
   - $HOME/.m2
 script:
-- ./mvnw clean verify
+- ./mvnw -B verify
