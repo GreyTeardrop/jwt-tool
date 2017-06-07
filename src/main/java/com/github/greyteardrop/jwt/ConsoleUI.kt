@@ -26,7 +26,7 @@ class ConsoleUI(private val commandExecutor: CommandExecutor,
             stdOut.println("Enter key $i")
             stdOut.print("$ ")
             val key = reader.readLine()
-            if (key.isEmpty()) {
+            if (key.isNullOrEmpty()) {
                 executeCommand(command)
                 // TODO: option to execute multiple commands in a loop
                 return
@@ -58,8 +58,8 @@ class ConsoleUI(private val commandExecutor: CommandExecutor,
         }
     }
 
-    private fun isValidPayload(key: String, value: String): Boolean = when (key) {
-        emailKey -> EmailValidator.isValidEmail(value)
+    private fun isValidPayload(key: String, value: String?): Boolean = when (key) {
+        emailKey -> value != null && EmailValidator.isValidEmail(value)
         else     -> true
     }
 
