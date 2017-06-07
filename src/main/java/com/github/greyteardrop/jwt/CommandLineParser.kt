@@ -19,7 +19,9 @@ class CommandLineParser {
             return null
         }
 
-        var command = CreateCommand(emptyMap(), exportToClipboard = false)
+        // TODO: as there's only one command now, we create it from the start
+        // TODO: to support multiple commands, command has to be instantiated when command line argument is parsed
+        var command = CreateCommand()
         var i = 0
         while (i < args.size) {
             when (args[i]) {
@@ -50,9 +52,10 @@ class CommandLineParser {
     }
 
     private fun displayHelp(): Nothing {
+        // TODO: Help text might be built from list of available options, might be loaded from resource
         throw UserException("""|jwt-tool [--help] | <command> [<options>]
                                |  Commands:
-                               |    create [--to-clipboard|--payload <key> <value>]""".trimIndent(), 0)
+                               |    create [--to-clipboard|--payload <key> <value>]""".trimMargin(), 0)
     }
 
 }
