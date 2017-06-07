@@ -21,4 +21,9 @@ data class CreateCommand(
      */
     fun withPayload(key: String, value: String): CreateCommand = copy(payload = payload + (key to value))
 
+    companion object PayloadKeys {
+        const val userIdKey = "user_id"
+        const val emailKey = "email"
+    }
+
 }

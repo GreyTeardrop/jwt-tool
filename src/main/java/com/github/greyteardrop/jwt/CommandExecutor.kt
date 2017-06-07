@@ -2,6 +2,8 @@ package com.github.greyteardrop.jwt
 
 import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
+import com.github.greyteardrop.jwt.CreateCommand.PayloadKeys.emailKey
+import com.github.greyteardrop.jwt.CreateCommand.PayloadKeys.userIdKey
 import java.time.Clock
 import java.util.Date
 
@@ -10,9 +12,6 @@ import java.util.Date
  */
 class CommandExecutor(
     private val clock: Clock = Clock.systemUTC()) {
-
-    private val userIdKey = "user_id"
-    private val emailKey = "email"
 
     private val defaultIssuer = "https://github.com/GreyTeardrop/jwt-tool"
 
