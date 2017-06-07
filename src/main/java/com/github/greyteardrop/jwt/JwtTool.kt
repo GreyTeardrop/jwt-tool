@@ -1,3 +1,4 @@
+@file:JvmName("JwtTool")
 package com.github.greyteardrop.jwt
 
 import kotlin.system.exitProcess

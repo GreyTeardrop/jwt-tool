@@ -9,6 +9,8 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
+        <mainClass>com.github.greyteardrop.jwt.JwtTool</mainClass>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -20,6 +22,7 @@
         <junit.version>4.12</junit.version>
         <junit-dataprovider.version>1.12.0</junit-dataprovider.version>
         <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+        <spring-boot-plugin.version>1.5.3.RELEASE</spring-boot-plugin.version>
         <system-rules.version>1.16.0</system-rules.version>
     </properties>
 
@@ -98,8 +101,16 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot-plugin.version}</version>
+                <configuration>
+                    <mainClass>${mainClass}</mainClass>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
 
 </project>

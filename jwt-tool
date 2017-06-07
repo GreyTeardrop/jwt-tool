@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+set -o pipefail
+
+function join_by { local IFS="$1"; shift; echo "$*"; }
+
+# command line arguments have to be separated by "," for Spring Boot plugin
+arguments=$(join_by , "$@")
+
+./mvnw -q spring-boot:run "-Drun.arguments=${arguments}"
