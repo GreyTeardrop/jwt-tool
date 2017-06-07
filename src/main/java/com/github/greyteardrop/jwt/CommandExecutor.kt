@@ -11,7 +11,8 @@ import java.util.Date
  * Executes single [Command]
  */
 class CommandExecutor(
-    private val clock: Clock = Clock.systemUTC()) {
+    private val clock: Clock = Clock.systemUTC(),
+    private val clipboard: TextClipboard = SystemTextClipboard()) {
 
     private val defaultIssuer = "https://github.com/GreyTeardrop/jwt-tool"
 
@@ -60,7 +61,7 @@ class CommandExecutor(
     }
 
     private fun exportToClipboard(token: String) {
-        TODO("not implemented")
+        clipboard.contents = token
     }
 
     /**
