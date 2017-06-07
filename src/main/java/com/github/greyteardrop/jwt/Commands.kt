@@ -9,18 +9,16 @@ sealed class Command
  * Create JWT token command.
  */
 data class CreateCommand(
-    val payload: Map<String, String>,
+    val payload: Map<String, String> = emptyMap(),
     /**
      * TODO: allow to specify from console UI/command line
      */
     val secret: String? = null,
-    val exportToClipboard: Boolean) : Command() {
+    val exportToClipboard: Boolean = false) : Command() {
 
     /**
      * Returns new instance of [CreateCommand] with [key] mapped to [value] in the payload.
      */
-    fun withPayload(key: String, value: String): CreateCommand {
-        return copy(payload = payload + (key to value))
-    }
+    fun withPayload(key: String, value: String): CreateCommand = copy(payload = payload + (key to value))
 
 }
