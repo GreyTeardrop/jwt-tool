@@ -62,6 +62,7 @@ class CommandExecutor(
 
     private fun exportToClipboard(token: String) {
         clipboard.contents = token
+        println("The JWT has been copied to your clipboard!")
     }
 
     /**

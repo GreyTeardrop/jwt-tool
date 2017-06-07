@@ -10,7 +10,7 @@ import java.awt.datatransfer.Transferable
  */
 class SystemTextClipboard : TextClipboard {
 
-    private val clipboard = Toolkit.getDefaultToolkit().systemClipboard
+    private val clipboard by lazy { Toolkit.getDefaultToolkit().systemClipboard }
 
     override var contents: String?
         get() {

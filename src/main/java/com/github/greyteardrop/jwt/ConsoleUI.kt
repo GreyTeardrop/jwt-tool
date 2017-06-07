@@ -19,12 +19,14 @@ class ConsoleUI(private val commandExecutor: CommandExecutor,
     fun run() {
         var command = CreateCommand(exportToClipboard = true)
         var i = 0
-        stdOut.println("Starting with JWT token generation. Enter blank line to complete.")
+        stdOut.println("Starting with JWT token generation. Enter blank line to finish.")
+        stdOut.flush()
         while (true) {
             i++
 
             stdOut.println("Enter key $i")
             stdOut.print("$ ")
+            stdOut.flush()
             val key = reader.readLine()
             if (key.isNullOrEmpty()) {
                 executeCommand(command)
@@ -34,7 +36,8 @@ class ConsoleUI(private val commandExecutor: CommandExecutor,
 
             do {
                 stdOut.println("Enter $key value")
-                stdOut.print("_ $key = ")
+                stdOut.print("> $key = ")
+                stdOut.flush()
                 val value = reader.readLine()
                 if (isValidPayload(key, value)) {
                     command = command.withPayload(key, value)
