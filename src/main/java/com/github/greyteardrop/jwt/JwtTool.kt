@@ -12,7 +12,10 @@ fun main(args: Array<String>) {
     try {
         val command = commandLineParser.parseCommandLine(args)
         if (command != null) {
-            commandExecutor.execute(command)
+            val result = commandExecutor.execute(command)
+            if (result != null) {
+                println(result)
+            }
         }
         else {
             val consoleUI = ConsoleUI(commandExecutor)
