@@ -40,12 +40,11 @@ class CommandLineParserTest {
         fun successfulParseData() = listOf(
             listOf(arrayOf<String>(), null),
             listOf(arrayOf("create"),
-                   CreateCommand(emptyMap(), exportToClipboard = false)),
+                   CreateCommand()),
             listOf(arrayOf("create", "--to-clipboard"),
-                   CreateCommand(emptyMap(), exportToClipboard = true)),
+                   CreateCommand(exportToClipboard = true)),
             listOf(arrayOf("create", "--payload", "email", "someone@somewhere.net"),
-                   CreateCommand(mapOf("email" to "someone@somewhere.net"),
-                                                             exportToClipboard = false)))
+                   CreateCommand(mapOf("email" to "someone@somewhere.net"))))
 
         @JvmStatic
         @DataProvider
@@ -53,7 +52,8 @@ class CommandLineParserTest {
             listOf(arrayOf("unknown-command"), "Unknown command unknown-command"),
             listOf(arrayOf("create", "--payload"), "--payload requires 2 arguments: <key> and <value>"),
             listOf(arrayOf("create", "--payload", "key"), "--payload requires 2 arguments: <key> and <value>"),
-            listOf(arrayOf("create", "--unknown-parameter"), "Unknown command --unknown-parameter"))
+            listOf(arrayOf("create", "--unknown-parameter"), "Unknown command --unknown-parameter"),
+            listOf(arrayOf("--help"), "jwt-tool [--help] | <command> [<options>]"))
 
     }
 
