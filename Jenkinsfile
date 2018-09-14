@@ -8,7 +8,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './mvnw -Dmaven.repo.local=./.m2/repository -B verify'
+                withCache(keyFilePath: './pom.xml', cacheDirPath: './.m2/repository') {
+                    sh './mvnw -Dmaven.repo.local=./.m2/repository -B verify'
+                }
             }
         }
     }
