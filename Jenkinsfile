@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './mvnw -B verify'
+                sh './mvnw -Dmaven.repo.local=./.m2/repository -B verify'
             }
         }
     }
