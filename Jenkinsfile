@@ -1,4 +1,3 @@
-@Library('jenkins-pipeline@cache-aws') _
 pipeline {
     agent any
 
