@@ -11,7 +11,7 @@ pipeline {
                 cache(maxCacheSize: 1024, caches: [
                         arbitraryFile(path: './.m2/repository', includes: '**/*', excludes: '')
                 ]) {
-                    sh './mvnw -Dmaven.repo.local=./.m2/repository -B verify'
+                    sh './mvnw -Dmaven.repo.local=./.m2/repository -B clean verify'
                 }
             }
         }
