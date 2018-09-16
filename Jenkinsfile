@@ -9,8 +9,11 @@ pipeline {
         stage('Build') {
             steps {
                 cache(maxCacheSize: 1024, caches: [
-                        arbitraryFile(path: './.m2/repository', includes: '**/*', excludes: '')
-                ]) {
+                        dependency(
+                                path: './.m2/repository',
+                                dependencyDescriptor: 'pom.xml',
+                                includes: '**/*',
+                                excludes: '')]) {
                     sh './mvnw -Dmaven.repo.local=./.m2/repository -B clean verify'
                 }
             }
