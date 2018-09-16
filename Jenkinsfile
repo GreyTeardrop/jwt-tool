@@ -15,8 +15,13 @@ spec:
 """
         }
     }
+
     options {
         timestamps()
+    }
+
+    environment {
+        DISPLAY = ":99.0"
     }
 
     stages {
