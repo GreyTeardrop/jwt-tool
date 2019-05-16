@@ -21,7 +21,7 @@
         <java-jwt.version>3.2.0</java-jwt.version>
         <junit.version>4.12</junit.version>
         <junit-dataprovider.version>1.12.0</junit-dataprovider.version>
-        <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <spring-boot-plugin.version>2.1.5.RELEASE</spring-boot-plugin.version>
         <system-rules.version>1.16.0</system-rules.version>
         <maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
