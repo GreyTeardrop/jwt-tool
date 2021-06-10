@@ -22,7 +22,7 @@
         <junit.version>4.13.2</junit.version>
         <junit-dataprovider.version>1.13.1</junit-dataprovider.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-        <spring-boot-plugin.version>2.5.0</spring-boot-plugin.version>
+        <spring-boot-plugin.version>2.5.1</spring-boot-plugin.version>
         <system-rules.version>1.19.0</system-rules.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     </properties>
