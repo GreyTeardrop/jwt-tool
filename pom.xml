@@ -18,7 +18,7 @@
         <kotlin.version>1.6.21</kotlin.version>
 
         <assertj.version>3.22.0</assertj.version>
-        <java-jwt.version>3.19.1</java-jwt.version>
+        <java-jwt.version>3.19.2</java-jwt.version>
         <junit.version>4.13.2</junit.version>
         <junit-dataprovider.version>1.13.1</junit-dataprovider.version>
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
