@@ -1,0 +1,31 @@
+name: Maven build
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.0.2
+      - name: Set up JDK
+        uses: actions/setup-java@v3.4.0
+        with:
+          distribution: temurin
+          java-version: 8
+          cache: maven
+      - name: Run Maven build
+        uses: GabrielBB/xvfb-action@v1.6
+        with:
+          run: ./mvnw -B verify
+      - name: Publish the test report
+        uses: scacap/action-surefire-report@v1.0.13
+        if: always()
+        with:
+          check_name: tests
+          github_token: ${{ secrets.GITHUB_TOKEN }}
