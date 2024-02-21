@@ -24,7 +24,7 @@ jobs:
         with:
           run: ./mvnw -B verify
       - name: Publish the test report
-        uses: scacap/action-surefire-report@v1.0.13
+        uses: scacap/action-surefire-report@v1.8.0
         if: always()
         with:
           check_name: tests
