@@ -12,7 +12,8 @@ import java.util.Date
  */
 class CommandExecutor(
     private val clock: Clock = Clock.systemUTC(),
-    private val clipboard: TextClipboard = SystemTextClipboard()) {
+    private val clipboard: TextClipboard = SystemTextClipboard(),
+) {
 
     private val defaultIssuer = "https://github.com/GreyTeardrop/jwt-tool"
 
