@@ -17,9 +17,6 @@ class CommandExecutor(
 
     private val defaultIssuer = "https://github.com/GreyTeardrop/jwt-tool"
 
-    /**
-     * TODO: should be loaded from configuration storage.
-     */
     private val defaultSecret = "secret"
 
     /**
